@@ -1,5 +1,52 @@
 ---
+import Link from "./Link.astro"
+const navItems = [
+  { href: "/", imgSrc: "/iconer/hjem.svg", alt: "Home" },
+  { href: "/CO2-icon", imgSrc: "/iconer/CO2-icon.svg", alt: "Hvorfor" },
+  { href: "/crypto-icon", imgSrc: "/iconer/crypto-icon", alt: "Facts" },
+  { href: "/More-storage-Icon", imgSrc: "/iconer/More-storage-Icon", alt: "Beregner" },
+  { href: "/flere-filer-ikon", imgSrc: "/ikoner/flere-filer-ikon.svg", alt: "Ressourcer" },
+  { href: "/flere-filer-ikon", imgSrc: "/ikoner/flere-filer-ikon.svg", alt: "Ressourcer" },
+];
 ---
-<div>
-Header - tilføj navigation mm.
+<!-- Navigations menu med logo:left og undersider:right -->
+<div x-data="{ showmenu: false }" class="p-4 fixed lg:static w-full z-10 bg-white" >
+<div id="navbar" class="flex flex-row justify-between">
+<div id="logo" class="animate-pulse text-4xl text-rose-950 font-bold">
+<a href="#navbar" class="">Sten Simons</a>
 </div>
+<nav id="desktopmenu" class="hidden lg:block">
+<ul class="flex flex-row gap-4">
+<li class=""><Link href="#københavnerbilleder" >Københavnerbilleder</Link></li>
+<li class=""><Link href="#uddrag" >Bogens indhold</Link></li>
+<li class=""><Link href="#forfatter" >Mød forfatteren</Link></li>
+<li class=""><Link href="#tilmelding" >Køb nu</Link></li>
+</ul>
+</nav>
+
+<!-- Mobil bottom menu -->
+<button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu">Menu</button>
+</div>
+<nav id="mobilmenu" class="flex flex-col content-center pt-4" 
+x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+<ul >
+    <li class=""><Link href="#københavnerbilleder" >Københavnerbilleder</Link></li>
+    <li class=""><Link href="#uddrag" >Bogens indhold</Link></li>
+    <li class=""><Link href="#forfatter" >Mød forfatteren</Link></li>
+    <li class=""><Link href="#tilmelding" >Køb nu</Link></li>
+</ul>
+</nav>
+</div>
+
+
+<nav class="bottom-nav">
+  <ul>
+    {navItems.map((item) => (
+      <li>
+        <a href={item.href} class="nav-item">
+          <img src={item.imgSrc} alt={item.alt} />
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
