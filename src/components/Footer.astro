@@ -1,6 +1,31 @@
 ---
+import Link from "../components/Link.astro";
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
+
+<div class="grid grid-cols-5 bg-lime-400 text-lime-900 font-mono p-6">
+  <p class="col-span-2">
+    Let's Do It World NGO <br />Roosikrantsi 3, <br /> TALLINN 10119,<br /> Estonia
+    <br />Reg. code - 80562203 <br />
+    <Link href="mailto:digital@ldiw.org" target="_blank">digital@ldiw.org</Link>
+  </p>
+  <p class="col-span-2">
+    <Link href="https://www.worldcleanupday.org/blog" target="_blank">Blog</Link
+    >
+    <br />
+    <Link
+      href="https://trello.com/b/YzROvY3M/digital-cleanup-day"
+      target="_blank">Marketing Materials</Link
+    >
+    <br /><Link
+      href="https://drive.google.com/file/d/1a0sgGo1n8edioZ4Itm6DNqTPlmKWGfTj/view"
+      target="_blank"
+      >Constitution
+    </Link><br /><Link
+      href="https://www.worldcleanupday.org/get-involved"
+      target="_blank"
+      >Join the movement
+    </Link><br />
+    <Link href="#" target="_blank">Ressourcer</Link>
+  </p>
+  <img class="place-self-center" src="#" alt="Logo" />
 </div>
-  

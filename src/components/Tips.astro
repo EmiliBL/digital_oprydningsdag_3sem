@@ -1,0 +1,48 @@
+---
+
+---
+
+<div id="dropdown">
+  <button
+    id="knap"
+    class="bg-lime-50 text-lime-900 font-mono p-5 rounded-br-lg cursor-pointer w-50"
+    >Tips</button
+  >
+  <div
+    id="content"
+    class="bg-lime-50 text-lime-900 font-mono max-w-50 rounded-br-lg mb-10 p-3"
+  >
+    <ul class="list-disc pl-5 text-sm/8">
+      <li>Slet gamle og unødvendige filer</li>
+      <li>Afmeld nyhedsbreve, du ikke læser</li>
+      <li>Slet apps, du ikke bruger</li>
+      <li>Luk ubrugte konti</li>
+      <li>Tøm papirkurven</li>
+      <li>Organisér billeder i mapper</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  //@ts-nocheck
+  // hent dropdown knap //
+  const button = document.querySelector("#dropdown #knap");
+  const dropDownContent = document.querySelector("#content");
+
+  // tilføj klik-event //
+  button.addEventListener("click", () => {
+    // tjek om dropdown allerede er vist //
+    if (dropDownContent.style.display === "block") {
+      dropDownContent.style.display = "none";
+    } else {
+      dropDownContent.style.display = "block";
+    }
+  });
+
+  // luk dropdown hvis der klikkes udenfor //
+  window.addEventListener("click", (event) => {
+    if (!event.target.matches("#dropdown #knap")) {
+      dropDownContent.style.display = "none";
+    }
+  });
+</script>
