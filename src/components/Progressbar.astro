@@ -1,0 +1,25 @@
+---
+
+---
+
+<div class="-11/12 max-w-xl flex flex-col items-center space-y-4">
+  <input
+    id="progressBar"
+    type="range"
+    min="0"
+    max="100"
+    value="50"
+    class="w-full h-2 bg-lime-950 rounded-lg appearance-none cursor-pointer accent-lime-950"
+  />
+  <span id="progressValue" class="text-xl text-mono text-lime-950">50</span>
+</div>
+
+<script>
+  //@ts-nocheck
+  const progressBar = document.getElementById("progressBar");
+  const progressValue = document.getElementById("progressValue");
+
+  progressBar.addEventListener("input", () => {
+    progressValue.textContent = progressBar.value;
+  });
+</script>
