@@ -5,15 +5,17 @@ const { variant= "primary", size = "medium" } = Astro.props;
 
  
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
-const buttonStyling = "p-3 bg-lime-400 rounded-full font-mono"; 
+const buttonStyling = "p-3 rounded-full font-mono hover:blur-sm"; 
 
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
 const variantClasses = {
-"primary": "text-lime-900 font-regular hover:blur-sm",
+"primary": "w-90 text-lime-900 bg-lime-400 font-regular hover:blur-sm",
 
-"secondary": "text-lime-400  bg-lime-900 hover:bg-blue-600 hover:blur-sm",
-};
+"secondary": "w-90 text-lime-400  bg-lime-900 hover:bg-lime-400 hover:blur-sm",
+
+"tertiary": "w-90 text-lime-900 bg-lime-50 hover:blur-sm border-2 border-lime-400",
+}; 
 
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
