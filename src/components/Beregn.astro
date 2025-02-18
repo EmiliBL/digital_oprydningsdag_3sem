@@ -1,0 +1,26 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<article class="grid grid-cols-1">
+    <div class="bg-lime-100 p-6 font-mono"> Ryd op på din harddisk</div>
+    <Button> Ryd op i dine billeder & videoer</Button>
+    <Button> Ryd op på din telefon</Button>
+    <Button> Ryd op i dine emails</Button>
+</article>
+
+
+      <!-- Slider -->
+      <div class="mt-6">
+        <input 
+          type="range" 
+          min="0" 
+          max="100" 
+          x-model="co2"
+          class="w-full bg-green-500"
+        />
+        <p class="text-center text-xl font-bold mt-2" x-text="co2 + '%'"></p>
+      </div>
+
+      
+   
