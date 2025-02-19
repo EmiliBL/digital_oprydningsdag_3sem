@@ -14,7 +14,7 @@ import Hero from "../components/Hero.astro";
 <MainLayout title="Titel">
   <Tips />
   <article>
-    <Hero></Hero>
+    <Hero />
     <InfoColumn />
     <TextKarussel />
     <FactsColumn />
@@ -22,57 +22,88 @@ import Hero from "../components/Hero.astro";
   </article>
 
   <!-- Beregner formular -->
-  <article class="bg-lime-50 rounded-2xl p-6 flex flex-col justify-center gap-3">
-  <div id="Harddisk" class="flex justify-center"> <Button variant="tertiary" size="medium" onclick="udfaldSektion()">Ryd op på din computer harddisk</Button></div>
-  <div class="flex justify-center"> <Button variant="tertiary" size="medium">Ryd op i dine billeder & videoer</Button> </div>
-  <div class="flex justify-center"> <Button variant="tertiary" size="medium">Ryd op på din telefon</Button></div>
-  <div class="flex justify-center"> <Button variant="tertiary" size="medium">Ryd op i dine emails</Button></div>
+  <article
+    class="bg-lime-50 rounded-2xl p-6 flex flex-col justify-center gap-3"
+  >
+    <div id="Harddisk" class="flex justify-center">
+      <Button variant="tertiary" size="medium" onclick="udfaldSektion()"
+        >Ryd op på din computer harddisk</Button
+      >
+    </div>
+    <div class="flex justify-center">
+      <Button variant="tertiary" size="medium"
+        >Ryd op i dine billeder & videoer</Button
+      >
+    </div>
+    <div class="flex justify-center">
+      <Button variant="tertiary" size="medium">Ryd op på din telefon</Button>
+    </div>
+    <div class="flex justify-center">
+      <Button variant="tertiary" size="medium">Ryd op i dine emails</Button>
+    </div>
 
     <section>
       <section id="start">
-       <div class="bg-lime-400 rounded-t-lg">
-      <h3 id="titel" class="m-4 pt-2 font-bold text-lime-900 text-xl sm:text-6xl md:text-7xl lg:text-8xl font-mono">
-        Beregn dit digitale affald</h3>
-      <p id="p-guide" class="p-4 pt-1 font-mono text-sm font-extralight text-lime-900 ">
-        Vær med til at gøre en forskel. Beregn hvor meget C02 besparelse du kan lave, ved at rydde op i dit digitale aftryk. </p>
-       </div>
+        <div class="bg-lime-400 rounded-t-lg">
+          <h3
+            id="titel"
+            class="m-4 pt-2 font-bold text-lime-900 text-xl sm:text-5xl md:text-6xl lg:text-7xl font-mono"
+          >
+            Beregn dit digitale affald
+          </h3>
+          <p
+            id="p-guide"
+            class="p-4 pt-1 font-mono text-sm font-extralight text-lime-900"
+          >
+            Vær med til at gøre en forskel. Beregn hvor meget C02 besparelse du
+            kan lave, ved at rydde op i dit digitale aftryk.
+          </p>
+        </div>
       </section>
 
-       <div class="border-2 border-lime-400 rounded-b-lg p-4">
-        <p id="p-proces" class="text-center p-4 pt-4 font-mono text-xs font-extralight text-lime-900 ">
-          Vælg en kategori & beregn dit co2 aftryk. </p>
-          <Progressbar></Progressbar>
+      <div class="border-2 border-lime-400 rounded-b-lg p-4">
+        <p
+          id="p-proces"
+          class="text-center p-4 pt-4 font-mono text-xs font-extralight text-lime-900"
+        >
+          Vælg en kategori & beregn dit co2 aftryk.
+        </p>
+        <Progressbar />
 
-          <article class="gap-4 ">
-          <div class="mt-4 flex justify-center"> <Button variant="secondary" size="medium">Registrer dit bidrag</Button></div>
-          <div class="mt-2 flex justify-center"> <Button variant="primary" size="medium">Beregn CO2 bidrag</Button></div>
-          </article>
-       </div>
-      </section>
+        <article class="gap-4">
+          <div class="mt-4 flex justify-center">
+            <Button variant="secondary" size="medium"
+              >Registrer dit bidrag</Button
+            >
+          </div>
+          <div class="mt-2 flex justify-center">
+            <Button variant="primary" size="medium">Beregn CO2 bidrag</Button>
+          </div>
+        </article>
+      </div>
+    </section>
   </article>
 
   <!-- JS til beregneren Gør når man trykker på rengør harddisk, sker der ændring i -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       var Harddisk = document.getElementById("Harddisk");
-  
+
       Harddisk.addEventListener("click", udfaldSektion);
     });
-  
+
     // Funktion til at ændre indholdet
     function udfaldSektion() {
       // Hent de nødvendige elementer
       var titel = document.getElementById("titel");
       var pGuide = document.getElementById("p-guide");
       var pProces = document.getElementById("p-proces");
-  
+
       // Ændre teksten i sektionen
       titel.textContent = "Rengør harddisk";
-      pGuide.textContent = "Du kan rengøre din harddisk ved at slette alle filer.";
+      pGuide.textContent =
+        "Du kan rengøre din harddisk ved at slette alle filer.";
       pProces.textContent = "Beregn hvor meget du har ryddet op.";
     }
   </script>
-
-
-
 </MainLayout>
