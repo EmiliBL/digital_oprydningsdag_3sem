@@ -1,0 +1,192 @@
+---
+
+---
+
+<section
+  id="step1"
+  class="bg-lime-50 rounded-2xl p-6 flex flex-col justify-center gap-3 text-lime-900 max-w-110 place-self-center mt-10"
+>
+  <p>Vær med til at gøre en forskel</p>
+  <h3 class="text-3xl font-bold">Registrer dit bidrag</h3>
+  <div>
+    <label class="block" for="name">For-og efternavn</label>
+    <input
+      class="p-3 rounded-full border-2 border-lime-400 w-60"
+      type="text"
+      id="name"
+      placeholder="Skriv for-og efternavn her"
+    />
+  </div>
+  <div>
+    <label class="block" for="email">E-mail</label>
+    <input
+      class="p-3 rounded-full border-2 border-lime-400 w-60"
+      type="email"
+      id="email"
+      placeholder="Skriv din email-adresse her"
+    />
+  </div>
+  <div class="flex justify-between">
+    <!-- Tilbage-knap -->
+    <button
+      id="backBtn1"
+      class="p-3 rounded-full font-mono w-30 text-lime-900 bg-lime-400 font-regular hover:blur-sm mt-5 hidden"
+      onclick="toggleSections('step1', 'step2', true)"
+    >
+      Tilbage
+    </button>
+    <!-- Almindelig Næste-knap -->
+    <button
+      id="nextBtn1"
+      class="p-3 rounded-full font-mono w-30 text-lime-900 bg-lime-400 font-regular hover:blur-sm mt-5"
+      onclick="toggleSections('step1', 'step2', false)"
+    >
+      Næste
+    </button>
+  </div>
+</section>
+
+<section
+  id="step2"
+  class="bg-lime-50 rounded-2xl p-6 flex-col justify-center gap-5 text-lime-900 max-w-130 place-self-center hidden mt-10"
+>
+  <h3 class="text-3xl font-bold">Noter dit bidrag</h3>
+  <div class="grid grid-cols-4 gap-4">
+    <div>
+      <p>Harddisk</p>
+      <div>
+        <img
+          class="w-24 h-24"
+          src="../ikoner/flere-filer-ikon.svg"
+          alt="Harddisk"
+        />
+      </div>
+      <div>
+        <label class="block" for="GB slettet">GB slettet</label>
+        <input
+          class="p-3 rounded-full border-2 border-lime-400 w-30"
+          type="text"
+          id="GB slettet"
+          placeholder="gb slettet"
+        />
+      </div>
+    </div>
+    <div>
+      <p>Billeder&Video</p>
+      <div>
+        <img class="w-24 h-24" src="../ikoner/camera-icon.svg" alt="Harddisk" />
+      </div>
+      <div>
+        <label class="block" for="GB slettet">GB slettet</label>
+        <input
+          class="p-3 rounded-full border-2 border-lime-400 w-30"
+          type="text"
+          id="GB slettet"
+          placeholder="gb slettet"
+        />
+      </div>
+    </div>
+    <div>
+      <p>SmartPhone</p>
+      <div>
+        <img
+          class="w-24 h-24"
+          src="../ikoner/smartphone-icon.svg"
+          alt="Harddisk"
+        />
+      </div>
+      <div>
+        <label class="block" for="GB slettet">GB slettet</label>
+        <input
+          class="p-3 rounded-full border-2 border-lime-400 w-30"
+          type="text"
+          id="GB slettet"
+          placeholder="gb slettet"
+        />
+      </div>
+    </div>
+    <div>
+      <p>Emails</p>
+      <div>
+        <img class="w-24 h-24" src="../ikoner/email-icon.svg" alt="Harddisk" />
+      </div>
+      <div>
+        <label class="block" for="GB slettet">GB slettet</label>
+        <input
+          class="p-3 rounded-full border-2 border-lime-400 w-30"
+          type="text"
+          id="GB slettet"
+          placeholder="gb slettet"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between">
+    <!-- Tilbage-knap -->
+    <button
+      id="backBtn2"
+      class="p-3 rounded-full font-mono w-30 text-lime-900 bg-lime-400 font-regular hover:blur-sm mt-5"
+      onclick="toggleSections('step2', 'step1', true)"
+    >
+      Tilbage
+    </button>
+    <!-- Almindelig Næste-knap -->
+    <button
+      id="nextBtn2"
+      class="p-3 rounded-full font-mono w-40 text-lime-900 bg-lime-400 font-regular hover:blur-sm mt-5"
+      onclick="toggleSections('step2', 'step3', false)"
+    >
+      Se Resultat
+    </button>
+  </div>
+</section>
+
+<section
+  id="step3"
+  class="bg-lime-50 rounded-2xl p-6 flex-col justify-center gap-3 text-lime-400 max-w-110 place-self-center hidden mt-10"
+>
+  <h2 class="text-4xl font-bold">Du skide god!</h2>
+  <h3 class="text-3xl font-bold">Dit bidrag svarer til:</h3>
+
+  <div class="grid grid-cols-2">
+    <img class="w-24 h-24" src="../ikoner/blade.svg" alt="blade" />
+    <div>
+      <h3 class="text-3xl font-bold">51 kWh energi</h3>
+      <p>Det er nok til at en elbil kan køre 377 km</p>
+    </div>
+  </div>
+  <div class="grid grid-cols-2">
+    <img class="w-24 h-24" src="../ikoner/tre.svg" alt="træ" />
+    <div>
+      <h3 class="text-3xl font-bold">2 træer</h3>
+      <p>Det svarer til det carbon 2 træer absorberer på et år</p>
+    </div>
+  </div>
+  <div class="flex justify-between">
+    <!-- Tilbage-knap -->
+    <button
+      id="backBtn3"
+      class="p-3 rounded-full font-mono w-30 text-lime-900 bg-lime-400 font-regular hover:blur-sm mt-5"
+      onclick="toggleSections('step3', 'step2', true)"
+    >
+      Tilbage
+    </button>
+  </div>
+</section>
+
+<!-- Tilføj JavaScript med client:load -->
+<script client:load>
+  // Funktion der håndterer skift mellem sektioner
+  function toggleSections(currentStepId, nextStepId, isBack) {
+    const currentStep = document.getElementById(currentStepId);
+    const nextStep = document.getElementById(nextStepId);
+
+    if (isBack) {
+      currentStep.classList.add("hidden"); // Skjuler den aktuelle step
+      nextStep.classList.remove("hidden"); // Viser den forrige step
+    } else {
+      currentStep.classList.add("hidden"); // Skjuler den aktuelle step
+      nextStep.classList.remove("hidden"); // Viser den næste step
+    }
+  }
+</script>
