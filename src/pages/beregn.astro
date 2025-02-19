@@ -1,97 +1,79 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import Link from "../components/Link.astro";
-import TextKarussel from "../components/TextKarussel.astro";
-import FactsColumn from "../components/FactsColumn.astro";
-import InfoColumn from "../components/InfoColumn.astro";
-import Graf from "../components/Graf.astro";
 import Tips from "../components/Tips.astro";
-import Progressbar from "../components/Progressbar.astro";
-import Hero from "../components/Hero.astro";
 ---
 
 <MainLayout>
+  <Tips />
     <h2
     class="pt-24 text-lime-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-mono"
   >
     Beregn dit affald her
   </h2>
-    <section
-      id="step2"
-      class="bg-lime-50 rounded-2xl p-6 flex-col justify-center gap-5 text-lime-900 max-w-130 place-self-center mt-10"
-    >
-      <h3 class="text-3xl font-bold">Beregn dit bidrag</h3>
-      <div class="grid grid-cols-4 gap-4 content-center">
+    <section id="step2"
+      class="bg-lime-50 rounded-2xl p-6 gap-5 text-lime-900 max-w-140 place-self-center mt-10" >
+      <h3 class="text-3xl font-bold mb-3">Beregn dit bidrag</h3>
+
+      <section class="grid grid-cols-4 gap-8 items-center">
+    <!-- Harddisk -->
         <div>
-          <p class="mt-2 place-content-center">Harddisk</p>
-          <div>
+          <p class="mb-2 ml-4 place-content-center">Harddisk</p>
+            <img class="w-24 h-24 ml-2" src="../ikoner/flere-filer-ikon.svg" alt="Harddisk" />
+            <label class="block mb-1 text-center" for="GB slettet">Procent</label>
+            <input
+              class="p-2 rounded-full border-2 border-lime-400 bg-lime-50 w-20 sm:w-30 h-8 sm:h-10 text-center"
+              type="text"
+              id="GB slettet"
+              placeholder="10%"
+            />
+        </div>
+<!-- Foto og video -->
+        <div>
+          <p class="ml-4 mb-2 place-content-center">Fotos&Video</p>
+            <img class="w-24 h-24 ml-2" src="../ikoner/camera-icon.svg" alt="Harddisk" />
+            <label class="block mb-1 text-center" for="GB slettet">Procent</label>
+            <input
+              class="p-2 rounded-full border-2 border-lime-400 bg-lime-50 w-20 sm:w-30 h-8 sm:h-10 text-center"
+              type="text"
+              id="10%"
+              placeholder="10%"
+            />
+        </div>
+<!-- Smartphone -->
+        <div>
+          <p class="mb-2">Smartphone</p>
+          
             <img
-              class="w-24 h-24 justify-center"
-              src="../ikoner/flere-filer-ikon.svg"
+              class="w-24 h-24 align-middle"
+              src="../ikoner/smartphone-icon.svg"
               alt="Harddisk"
             />
-          </div>
-          <div>
-            <label class="block text-center" for="GB slettet">Procent</label>
+
+            <label class="block mb-1 text-center " for="GB slettet">Procent</label>
             <input
-              class="p-3 rounded-full border-2 border-lime-400 w-30 text center"
+              class="p-2 rounded-full border-2 border-lime-400 bg-lime-50 w-20 sm:w-30 h-8 sm:h-10 text-center"
+              type="text"
+              id="Procent"
+              placeholder="10%"
+            />
+        </div>
+<!-- Emails -->
+        <div>
+          <p class="mb-2 text-center">Emails</p>
+          
+            <img class="w-24 h-24 items-center" src="../ikoner/email-icon.svg" alt="Harddisk" />
+         
+            <label class="block mb-1 text-center" for="GB slettet">Procent</label>
+            <input
+              class="p-2 rounded-full border-2 border-lime-400 bg-lime-50 w-20 sm:w-30 h-8 sm:h-10 text-center"
               type="text"
               id="GB slettet"
               placeholder="10%"
             />
           </div>
-        </div>
-        <div>
-          <p>Billeder&Video</p>
-          <div>
-            <img class="w-24 h-24" src="../ikoner/camera-icon.svg" alt="Harddisk" />
-          </div>
-          <div>
-            <label class="block" for="GB slettet">GB slettet</label>
-            <input
-              class="p-3 rounded-full border-2 border-lime-400 w-30"
-              type="text"
-              id="GB slettet"
-              placeholder="gb slettet"
-            />
-          </div>
-        </div>
-        <div>
-          <p>SmartPhone</p>
-          <div>
-            <img
-              class="w-24 h-24"
-              src="../ikoner/smartphone-icon.svg"
-              alt="Harddisk"
-            />
-          </div>
-          <div>
-            <label class="block" for="GB slettet">GB slettet</label>
-            <input
-              class="p-3 rounded-full border-2 border-lime-400 w-30"
-              type="text"
-              id="GB slettet"
-              placeholder="gb slettet"
-            />
-          </div>
-        </div>
-        <div>
-          <p>Emails</p>
-          <div>
-            <img class="w-24 h-24" src="../ikoner/email-icon.svg" alt="Harddisk" />
-          </div>
-          <div>
-            <label class="block" for="GB slettet">GB slettet</label>
-            <input
-              class="p-3 rounded-full border-2 border-lime-400 w-30"
-              type="text"
-              id="GB slettet"
-              placeholder="gb slettet"
-            />
-          </div>
-        </div>
-      </div>
+    
+      </section>
       
         
         <!-- Almindelig Næste-knap -->
@@ -139,6 +121,7 @@ import Hero from "../components/Hero.astro";
       </div>
     </section>
     
+    <!-- JS -->
     <script client:load>
       // Funktion der håndterer skift mellem sektioner
       function toggleSections(currentStepId, nextStepId, isBack) {
