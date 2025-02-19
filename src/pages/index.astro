@@ -21,89 +21,108 @@ import Hero from "../components/Hero.astro";
     <Graf />
   </article>
 
-  <!-- Beregner formular -->
-  <article
-    class="bg-lime-50 rounded-2xl p-6 flex flex-col justify-center gap-3"
-  >
-    <div id="Harddisk" class="flex justify-center">
-      <Button variant="tertiary" size="medium" onclick="udfaldSektion()"
-        >Ryd op på din computer harddisk</Button
-      >
-    </div>
-    <div class="flex justify-center">
-      <Button variant="tertiary" size="medium"
-        >Ryd op i dine billeder & videoer</Button
-      >
-    </div>
-    <div class="flex justify-center">
-      <Button variant="tertiary" size="medium">Ryd op på din telefon</Button>
-    </div>
-    <div class="flex justify-center">
-      <Button variant="tertiary" size="medium">Ryd op i dine emails</Button>
-    </div>
+ <!-- Beregner formular -->
+<article class="bg-lime-50 rounded-2xl p-6 flex flex-col justify-center gap-3">
+  <!-- CTA´er -->
+  <div id="Harddisk" class="flex justify-center">
+    <Button variant="tertiary" size="medium">Ryd op på din computer harddisk</Button>
+  </div>
+  <div class="flex justify-center">
+    <Button variant="tertiary" size="medium">Ryd op i dine billeder & videoer</Button>
+  </div>
+  <div class="flex justify-center">
+    <Button variant="tertiary" size="medium">Ryd op på din telefon</Button>
+  </div>
+  <div class="flex justify-center">
+    <Button variant="tertiary" size="medium">Ryd op i dine emails</Button>
+  </div>
 
-    <section>
-      <section id="start">
-        <div class="bg-lime-400 rounded-t-lg">
-          <h3
-            id="titel"
-            class="m-4 pt-2 font-bold text-lime-900 text-xl sm:text-5xl md:text-6xl lg:text-7xl font-mono"
-          >
-            Beregn dit digitale affald
-          </h3>
-          <p
-            id="p-guide"
-            class="p-4 pt-1 font-mono text-sm font-extralight text-lime-900"
-          >
-            Vær med til at gøre en forskel. Beregn hvor meget C02 besparelse du
-            kan lave, ved at rydde op i dit digitale aftryk.
-          </p>
-        </div>
-      </section>
-
-      <div class="border-2 border-lime-400 rounded-b-lg p-4">
-        <p
-          id="p-proces"
-          class="text-center p-4 pt-4 font-mono text-xs font-extralight text-lime-900"
-        >
-          Vælg en kategori & beregn dit co2 aftryk.
+  <!-- Info afsnit -->
+  <section>
+    <section id="start">
+      <div class="bg-lime-400 rounded-t-lg">
+        <h3 id="titel" class="m-4 pt-2 font-bold text-lime-900 text-xl sm:text-5xl md:text-6xl lg:text-7xl font-mono">
+          Beregn dit digitale affald
+        </h3>
+        <p id="p-guide" class="p-4 pt-1 font-mono text-sm font-extralight text-lime-900">
+          Vær med til at gøre en forskel. Beregn hvor meget C02 besparelse du kan lave, ved at rydde op i dit digitale aftryk.
         </p>
-        <Progressbar />
-
-        <article class="gap-4">
-          <div class="mt-4 flex justify-center">
-            <Button variant="secondary" size="medium"
-              >Registrer dit bidrag</Button
-            >
-          </div>
-          <div class="mt-2 flex justify-center">
-            <Button variant="primary" size="medium">Beregn CO2 bidrag</Button>
-          </div>
-        </article>
       </div>
     </section>
-  </article>
 
-  <!-- JS til beregneren Gør når man trykker på rengør harddisk, sker der ændring i -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var Harddisk = document.getElementById("Harddisk");
+    <div class="border-2 border-lime-400 rounded-b-lg p-4">
+      <p id="p-proces" class="text-center p-4 pt-4 font-mono text-xs font-extralight text-lime-900">
+        Vælg en kategori & beregn dit co2 aftryk.
+      </p>
+      <Progressbar />
 
-      Harddisk.addEventListener("click", udfaldSektion);
-    });
+      <!-- CTA´er -->
+      <article class="gap-4">
+        <div class="mt-4 flex justify-center">
+          <a href="/ressourcer">
+          <Button variant="secondary" size="medium">Registrer dit bidrag</Button>
+        </a>
+        </div>
+        <div class="mt-2 flex justify-center">
+          <Button variant="primary" size="medium" onclick="visPopUp()">Beregn CO2 bidrag</Button>
+        </div>
+      </article>
+    </div>
+  </section>
 
-    // Funktion til at ændre indholdet
-    function udfaldSektion() {
-      // Hent de nødvendige elementer
-      var titel = document.getElementById("titel");
-      var pGuide = document.getElementById("p-guide");
-      var pProces = document.getElementById("p-proces");
+  <!-- Udfald godt klaret -->
+  <section id="step3" class="bg-lime-50 rounded-2xl p-6 flex-col justify-center gap-3 text-lime-400 max-w-110 place-self-center hidden mt-10">
+    <h2 class="text-4xl font-bold">Du skide god!</h2>
+    <h3 class="text-3xl font-bold">Dit bidrag svarer til:</h3>
 
-      // Ændre teksten i sektionen
-      titel.textContent = "Rengør harddisk";
-      pGuide.textContent =
-        "Du kan rengøre din harddisk ved at slette alle filer.";
-      pProces.textContent = "Beregn hvor meget du har ryddet op.";
+    <div class="grid grid-cols-2">
+      <img class="w-24 h-24" src="../ikoner/blade.svg" alt="blade" />
+      <div>
+        <h3 class="text-3xl font-bold">51 kWh energi</h3>
+        <p>Det er nok til at en elbil kan køre 377 km</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2">
+      <img class="w-24 h-24" src="../ikoner/tre.svg" alt="træ" />
+      <div>
+        <h3 class="text-3xl font-bold">2 træer</h3>
+        <p>Det svarer til det carbon 2 træer absorberer på et år</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- JS til beregneren -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var harddiskButton = document.querySelector("#Harddisk button");
+    if (harddiskButton) {
+      harddiskButton.addEventListener("click", udfaldSektion);
     }
-  </script>
+
+    var beregnButton = document.querySelector("Button[variant='primary']");
+    if (beregnButton) {
+      beregnButton.addEventListener("click", visPopUp);
+    }
+  });
+
+  function udfaldSektion() {
+    var titel = document.getElementById("titel");
+    var pGuide = document.getElementById("p-guide");
+    var pProces = document.getElementById("p-proces");
+
+    titel.textContent = "Rengør harddisk";
+    pGuide.textContent = "Du kan rengøre din harddisk ved at slette unødvendige filer.";
+    pProces.textContent = "Beregn hvor meget du har ryddet op.";
+  }
+
+  function visPopUp() {
+    var popUp = document.getElementById("step3");
+    if (popUp) {
+      popUp.classList.remove("hidden");
+      popUp.style.display = "block"; // Sikrer visning
+    }
+  }
+</script>
+
 </MainLayout>
