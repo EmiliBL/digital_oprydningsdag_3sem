@@ -2,8 +2,6 @@
 import Link from "./Link.astro";
 const navItems = [
   { href: "/", imgSrc: "/ikoner/hjem.svg", alt: "Home" },
-  { href: "/CO2-icon", imgSrc: "/ikoner/CO2-icon.svg", alt: "Hvorfor" },
-  { href: "/crypto-icon", imgSrc: "/ikoner/crypto-icon.svg", alt: "Facts" },
   {
     href: "/More-storage-Icon",
     imgSrc: "/ikoner/More-storage-Icon.svg",
@@ -46,7 +44,7 @@ const navItems = [
 <nav
   class="fixed bottom-0 left-0 w-full bg-lime-400 inset-shadow-sm z-50 md:hidden"
 >
-  <ul class="grid grid-cols-6 gap-4 m-4 p-2 list-none h-12">
+  <ul class="grid grid-cols-4 gap-4 m-4 p-2 list-none h-12">
     {
       navItems.map((item) => (
         <li class="flex justify-center items-center" key={item.href}>
